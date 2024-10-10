@@ -6,7 +6,7 @@
   --title-color: #DB00FF;
   --color-text-decor: #000028;
   --color-heading: #FF0070;
-  --background-image: url(../images/cover-image-dark.png);
+  --background-image: url("../images/cover-image-dark.png");
 }
 
 .page.theme_dark .header__decor {

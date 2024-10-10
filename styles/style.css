@@ -1,5 +1,3 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
   margin: 0 auto;
@@ -8,7 +6,8 @@
   font-weight: 400;
   font-size: var(--font-size, 18px);
   line-height: var(--line-height, 1.3);
-  background: var(--background-image), var(--bg-color);
+  background-color: var(---bg-color);
+  background-image: var(--background-image);
   background-repeat: no-repeat;
   background-position: top center;
   background-size: cover;
@@ -18,18 +17,19 @@
 .header {
   position: relative;
   display: grid;
+  grid-template-rows: 1fr min-content 1fr;
   height: 100vh;
   min-height: 768px;
   padding: 20px;
 }
 
-@media (width <=768px) {
+@media (width <= 1023px) {
   .header {
     min-height: 1024px;
   }
 }
 
-@media (width <=375px) {
+@media (width <= 767px) {
   .header {
     min-height: 668px;
     padding: 10px;
@@ -63,7 +63,7 @@
   border-left: 1px solid var(--color-heading);
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .decorated-zone::before {
     top: 10px;
     right: 10px;
@@ -100,7 +100,7 @@
   background-color: var(--accent-color);
 }
 
-@media (width <=375px) {
+@media (width <= 767px) {
   .header__decor {
     top: 10px;
     right: 10px;
@@ -124,7 +124,7 @@
   }
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .header__theme-menu-list {
     padding-top: 64px;
   }
@@ -164,30 +164,19 @@
   border-bottom: 1px solid var(--color-heading);
 }
 
-/* Заголовок h1 */
 .header__title {
   justify-self: left;
-  margin-top: 245px;
-  margin-bottom: 85px;
+  align-self: center;
   margin-left: -20px;
   color: var(--title-color);
   font-weight: var(--font-weight, 700);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  line-height: 1.2;
+  line-height: 0.8;
   text-shadow: 4px 4px 0 #FF0070;
 }
 
-@media (width <= 768px) {
+@media (width <= 767px) {
   .header__title {
-    margin-top: 151px;
-    margin-bottom: 141px;
-  }
-}
-
-@media (width <= 375px) {
-  .header__title {
-    margin-top: 67px;
-    margin-bottom: 53px;
     margin-left: 0px;
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     line-height: 0.83;
@@ -202,26 +191,18 @@
 
 .header__paragraph {
   justify-self: right;
+  align-self: center;
   max-width: 50%;
-  margin-bottom: 155px;
   font-weight: var(--font-weight, 700);
   line-height: var(--line-height, 1.3);
 }
 
-@media (width <= 768px) {
-  .header__paragraph {
-    margin-bottom: 204px;
-  }
-}
-
-@media (width <= 375px) {
+@media (width <= 767px) {
   .header__paragraph {
     max-width: 100%;
-    margin-bottom: 78px;
   }
 }
 
-/* для h2 */
 .heading {
   color: var(--color-heading);
   font-weight: var(--font-weight, 700);
@@ -237,7 +218,6 @@
   line-height: var(--line-height, 1.3);
 }
 
-/* ссылки в тексте */
 .link__decor {
   text-decoration: none;
   text-shadow: 2px 2px 0 var(--accent-color);
@@ -254,7 +234,7 @@
 
 .link__decor:focus-visible {
   outline: 1px solid currentColor;
-  outline-offset: 0px 2px 0px 2px;
+  outline-offset: 2px;
 }
 
 .content__section {
@@ -262,7 +242,11 @@
   padding-bottom: 60px;
 }
 
-@media (width <= 375px) {
+.content__section .content__paragraph:not(:last-child) {
+  margin-bottom: 10px;
+}
+
+@media (width <= 767px) {
   .content__section {
     padding: 10px;
   }
@@ -275,13 +259,13 @@
   padding-top: 60px;
 }
 
-@media (width <= 768px) {
+@media (width <= 1023px) {
   .why__section {
     gap: 20px;
   }
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .why__section {
     grid-template-columns: 1fr;
     padding-top: 40px;
@@ -300,13 +284,13 @@
   margin-bottom: 20px;
 }
 
-@media (width <= 768px) {
+@media (width <= 1023px) {
   .concentration__title {
     max-width: 30%;
   }
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .concentration__title {
     max-width: 100%;
   }
@@ -322,7 +306,7 @@
   gap: 20px;
 }
 
-@media (width <= 768px) {
+@media (width <= 1023px) {
   .concentration__column-text {
     grid-template-columns: 1fr;
   }
@@ -332,19 +316,19 @@
   display: grid;
   grid-template-columns: 1fr 2fr;
   gap: 10px;
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
 
-@media (width <= 768px) {
+@media (width <= 1023px) {
   .better__column {
     gap: 20px;
   }
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .better__column {
-  grid-template-columns: 1fr;
-  padding-bottom: 50px;
+    grid-template-columns: 1fr;
+    padding-bottom: 40px;
   }
 }
 
@@ -359,13 +343,11 @@
   gap: 20px;
 }
 
-/* для h4 */
 .better__section-title {
   margin-bottom: 10px;
   font-weight: 400;
 }
 
-/* галлерея */
 .gallery__title {
   margin-bottom: 20px;
 }
@@ -420,9 +402,9 @@
   object-position: center;
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .gallery__title {
-  margin-bottom: 10px;
+    margin-bottom: 10px;
   }
 
 .gallery__container {
@@ -466,13 +448,13 @@
   padding: 20px;
 }
 
-@media (width <=768px) {
+@media (width <= 1023px) {
   .footer {
     min-height: 1024px;
   }
 }
 
-@media (width <=375px) {
+@media (width <= 767px) {
   .footer {
     min-height: 668px;
   }
@@ -482,15 +464,18 @@
   color: var(--title-color);
   font-weight: var(--font-weight, 700);
   font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  line-height: 1.2;
+  line-height: 0.8;
   text-shadow: 2px 2px 0 #FF0070;
 }
 
-@media (width <= 375px) {
+@media (width <= 767px) {
   .footer__title {
     font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
     line-height: 0.83;
   }
 }
 
+
+
+ 
 
