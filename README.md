@@ -1,4 +1,4 @@
-# Проект «Сложно сосредоточиться»
+# Сайт с переключением тем
 
 ## 📌 Описание проекта
 
@@ -27,8 +27,7 @@
 Клонируйте репозиторий
 
 ```
-git clone https://github.com/Krylova-tan/slozhno-sosredotochitsya.git
-cd slozhno-sosredotochitsya
+git clone https://github.com/Krylova-tan/verstka_theme-switch.git
 ```
 
 Откройте файл index.html в браузере
